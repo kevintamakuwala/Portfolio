@@ -485,7 +485,7 @@ export const contact = {
     },
     {
       href: meta.accounts.discord.invite,
-      title: 'Linkedin',
+      title: 'LinkedIn',
       icon: (
         <svg
           height="16"
@@ -648,7 +648,7 @@ export const footer = {
           href: '/',
         },
         {
-          title: 'My Projects',
+          title: 'Projects',
           href: '/projects',
         },
         {

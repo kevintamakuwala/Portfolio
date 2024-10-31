@@ -89,6 +89,14 @@ export default async function HomePage() {
           href={`https://youtube.com/${meta.accounts.youtube.username}`}
           Icon={Icons.Youtube}
         />
+        <SocialLink
+          href={`https://x.com/${meta.accounts.twitter.username}`}
+          Icon={Icons.Twitter}
+        />
+        <SocialLink
+          href={`https://instagram.com/${meta.accounts.instagram.username}`}
+          Icon={Icons.Instagram}
+        />
       </section>
 
       {/* Github Stats */}
