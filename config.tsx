@@ -484,8 +484,8 @@ export const contact = {
       ),
     },
     {
-      href: meta.accounts.discord.invite,
-      title: 'LinkedIn',
+      href: `https://www.linkedin.com/in/${meta.accounts.linkedin.username}`,
+      title: 'Linkedin',
       icon: (
         <svg
           height="16"
@@ -666,8 +666,8 @@ export const footer = {
           target: '_blank',
         },
         {
-          title: 'Github',
-          href: `https://github.com/${meta.accounts.github.username}`,
+          title: 'Twitter',
+          href: `https://x.com/${meta.accounts.twitter.username}`,
           target: '_blank',
         },
         {
