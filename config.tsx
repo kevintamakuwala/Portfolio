@@ -202,34 +202,6 @@ export type Experience = {
 
 export const experiences = [
   {
-    name: 'Trakky Services - SDE Intern',
-    started: '2023-05-01T16:59:08Z',
-    logo: { src: '/assets/experience/trakky/logo-01.jpg' },
-    ended: '2023-07-26',
-    description:
-      'Developed the entire user and admin frontend using ReactJs, CSS, Redux, and Material-UI.Rendered API calls from the backend server, making it dynamic. Maintained the highest quality of code and worked on various needs of the employer. Interacted with clients and solved numerous issues regarding user experience and interactivity.',
-    technologies: [
-      {
-        name: 'React.js',
-        icon: '/assets/tech/react.svg',
-      },
-      {
-        name: 'Redux',
-        icon: '/assets/tech/redux.svg',
-      },
-      {
-        name: 'PostgreSql',
-        icon: '/assets/tech/posgresql.svg',
-      },
-
-      {
-        name: 'TailwindCSS',
-        icon: '/assets/tech/tailwindcss.svg',
-      },
-    ],
-    website: 'https://trakky.in',
-  },
-  {
     name: 'DSA Tutor & Problem Setter - Decrypters Competitive Programming Club',
     started: '2023-07-03',
     ended: '2023-10-07',
