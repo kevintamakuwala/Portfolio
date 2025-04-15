@@ -85,20 +85,24 @@ export async function GetUserData(): Promise<{
   }
  );
 
- const { user } = data;
- if (!user) {
-  throw new Error("User data not found");
- }
+ const  user  = {
+  followers: { totalCount: 0 },
+  starredRepositories: { totalCount: 0 },
+  repositories: { totalCount: 0, totalDiskUsage: 0, edges: [] },
+ };
+//  if (!user) {
+//   throw new Error("User data not found");
+//  }
 
  const { followers, starredRepositories, repositories } = user;
- const stars = repositories.edges.reduce((sum, { node }) => sum + node.stargazerCount, 0);
- const forks = repositories.edges.reduce((sum, { node }) => sum + node.forkCount, 0);
+//  const stars = repositories.edges.reduce((sum, { node }) => sum + node.stargazerCount, 0);
+//  const forks = repositories.edges.reduce((sum, { node }) => sum + node.forkCount, 0);
 
  return {
   userFollowers: followers.totalCount,
   userStarredRepos: starredRepositories.totalCount,
-  userStars: stars,
-  userForks: forks,
+  userStars: 0,
+  userForks: 0,
   userPublicRepositoriesCount: repositories.totalCount,
   userPublicRepositoriesDiskUsage: repositories.totalDiskUsage,
  };

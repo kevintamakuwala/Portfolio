@@ -202,6 +202,78 @@ export type Experience = {
 
 export const experiences = [
   {
+    name: 'SDE 1 - Pirimid Fintech',
+    started: '2025-04-11',
+    logo: { src: '/assets/experience/pirimid/logo-01.png' },
+
+    description: ``,
+
+    technologies: [
+      {
+        name: 'Flutter',
+        icon: '/assets/tech/flutter.svg',
+      },
+      {
+        name: 'Java',
+        icon: '/assets/tech/java.svg',
+      },
+      {
+        name: 'Spring Boot',
+        icon: '/assets/tech/springboot.svg',
+      },
+      {
+        name: 'React.js',
+        icon: '/assets/tech/react.svg',
+      },
+
+      {
+        name: 'AWS',
+        icon: '/assets/tech/aws.svg',
+      },
+      {
+        name: 'PostgreSql',
+        icon: '/assets/tech/posgresql.svg',
+      },
+    ],
+    website: 'https://www.pirimidtech.com',
+  },
+  {
+    name: 'SDE Intern - Pirimid Fintech',
+    started: '2025-01-06',
+    ended: '2025-04-10',
+    logo: { src: '/assets/experience/pirimid/logo-01.png' },
+
+    description: `Improved the Early Warning System architecture, boosting flexibility by 50%. Built Spring Boot microservices with CQRS, event sourcing, and Resilience4j to reduce redundant API calls by 40%. Used Temporal.io for fault-tolerant workflows and integrated AWS ECS for scalable deployment.`,
+
+    technologies: [
+      {
+        name: 'Java',
+        icon: '/assets/tech/java.svg',
+      },
+      {
+        name: 'Spring Boot',
+        icon: '/assets/tech/springboot.svg',
+      },
+      {
+        name: 'React.js',
+        icon: '/assets/tech/react.svg',
+      },
+      {
+        name: 'Flutter',
+        icon: '/assets/tech/flutter.svg',
+      },
+      {
+        name: 'AWS',
+        icon: '/assets/tech/aws.svg',
+      },
+      {
+        name: 'PostgreSql',
+        icon: '/assets/tech/posgresql.svg',
+      },
+    ],
+    website: 'https://www.pirimidtech.com',
+  },
+  {
     name: 'DSA Tutor & Problem Setter - Decrypters Competitive Programming Club',
     started: '2023-07-03',
     ended: '2023-10-07',
