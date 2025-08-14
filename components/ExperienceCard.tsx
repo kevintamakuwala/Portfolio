@@ -4,6 +4,7 @@ import { Icons } from "./Icons";
 import { ButtonSecondary, ButtonPrimary } from "@/components/Button";
 import { type Experience } from "@/config";
 import { parseISO } from "@/lib/utils";
+import { DescriptionRenderer } from "./DescriptionRenderer";
 
 export interface ExperienceCardProps extends React.HTMLAttributes<HTMLDivElement> {
  experience: Experience;
@@ -18,7 +19,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
    </div>
    {experience.started && (
     <time className="my-2 block text-sm font-normal leading-none text-neutral-500 dark:text-neutral-500" dateTime={new Date(experience.started).toUTCString()}>
-     {parseISO(experience.started)} - {experience.ended ? parseISO(experience.ended) : "Now"}
+     {parseISO(experience.started)} - {experience.ended ? parseISO(experience.ended) : "Present"}
     </time>
    )}
    <div className="mt-4 flex flex-wrap gap-2">
@@ -28,7 +29,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
      </div>
     ))}
    </div>
-   <p className="mb-4 mt-2 text-neutral-700 dark:text-neutral-400 md:w-3/4">{experience.description}</p>
+   <DescriptionRenderer description={experience.description} />
 
    {experience.images &&
     experience.images.length > 0 &&
@@ -47,7 +48,7 @@ export function ExperienceCard({ experience }: ExperienceCardProps) {
     )}
     {experience.github && (
      <ButtonSecondary href={experience.github} target="_blank" rel="noopener noreferrer">
-      <Icons.Github className="mr-2 size-5 fill-neutral-700 dark:fill-white" />
+      <Icons.Github className="mr-2 size-5 fill-white stroke-2" />
       View on Github
      </ButtonSecondary>
     )}

@@ -4,6 +4,7 @@ import { Icons } from './Icons';
 import { ButtonSecondary, ButtonPrimary } from '@/components/Button';
 import { type Achievement } from '@/config';
 import { parseISO } from '@/lib/utils';
+import { DescriptionRenderer } from './DescriptionRenderer';
 
 export interface AchievementCardProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -25,7 +26,7 @@ export function AchievementCard({ achievement }: AchievementCardProps) {
           dateTime={new Date(achievement.started).toUTCString()}
         >
           {parseISO(achievement.started)} -{' '}
-          {achievement.ended ? parseISO(achievement.ended) : 'Now'}
+          {achievement.ended ? parseISO(achievement.ended) : 'Present'}
         </time>
       )}
       <div className="mt-4 flex flex-wrap gap-2">
@@ -45,9 +46,7 @@ export function AchievementCard({ achievement }: AchievementCardProps) {
           </div>
         ))}
       </div>
-      <p className="mb-4 mt-2 text-neutral-700 dark:text-neutral-400 md:w-3/4">
-        {achievement.description}
-      </p>
+      <DescriptionRenderer description={achievement.description} />
 
       {achievement.images &&
         achievement.images.length > 0 &&

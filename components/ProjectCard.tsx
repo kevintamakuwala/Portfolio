@@ -4,6 +4,7 @@ import { Icons } from './Icons';
 import { ButtonSecondary, ButtonPrimary } from '@/components/Button';
 import { type Project } from '@/config';
 import { parseISO } from '@/lib/utils';
+import { DescriptionRenderer } from './DescriptionRenderer';
 
 export interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
   project: Project;
@@ -24,7 +25,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           dateTime={new Date(project.started).toUTCString()}
         >
           {parseISO(project.started)} -{' '}
-          {project.ended ? parseISO(project.ended) : 'Now'}
+          {project.ended ? parseISO(project.ended) : 'Present'}
         </time>
       )}
       <div className="mt-4 flex flex-wrap gap-2">
@@ -44,9 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         ))}
       </div>
-      <p className="mb-4 mt-2 text-neutral-700 dark:text-neutral-400 md:w-3/4">
-        {project.description}
-      </p>
+      <DescriptionRenderer description={project.description} />
 
       {project.images &&
         project.images.length > 0 &&

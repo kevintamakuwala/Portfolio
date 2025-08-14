@@ -14,14 +14,7 @@ import { cn } from "@/lib/utils";
 
 export default function Settings() {
  const [isOpen, setIsOpen] = useState<boolean>(false);
- const [decorationsEnabled, setDecorationsEnabled] = useState<boolean>(true);
  const { resolvedTheme, setTheme } = useTheme();
-
- useEffect(() => {
-  /* eslint-disable-next-line @eslint-react/hooks-extra/no-direct-set-state-in-use-effect */
-  setDecorationsEnabled(() => localStorage.getItem("decorations") !== "false");
- }, []);
-
  return (
   <>
    <ButtonSecondary
@@ -54,7 +47,7 @@ export default function Settings() {
        <DialogTitle as="h3" className="text-xl/6 font-medium text-neutral-900 duration-200 motion-reduce:transition-none dark:text-white">
         Settings
        </DialogTitle>
-       <Description className="mt-2 text-base text-neutral-500 dark:text-neutral-300">Here you can change your settings, like website theme or decorations. Changes will be saved automatically.</Description>
+       <Description className="mt-2 text-base text-neutral-500 dark:text-neutral-300">Here you can change theme. Changes will be saved automatically.</Description>
 
        <div className="mt-2 divide-y divide-black/10 dark:divide-white/10">
         <div className="flex w-full cursor-auto select-none items-center py-3 text-base text-neutral-800 dark:text-white">
@@ -117,22 +110,6 @@ export default function Settings() {
             ]}
            />
           )}
-         </div>
-        </div>
-        <div className="mt-2">
-         <div className="flex w-full select-none items-center py-3 text-base text-neutral-800 dark:text-white">
-          <Icons.Sparkles className="mr-2 size-5 text-neutral-800/80 dark:text-neutral-300/50" />
-          Display Decorations
-          <div className="ml-auto flex w-32 items-center justify-end gap-2 text-sm italic text-neutral-800/50 dark:text-neutral-300/50">
-           <Switch
-            enabled={decorationsEnabled}
-            onChange={() => {
-             localStorage.setItem("decorations", !decorationsEnabled ? "true" : "false");
-             window.dispatchEvent(new Event("decorations"));
-             setDecorationsEnabled((prev) => !prev);
-            }}
-           />
-          </div>
          </div>
         </div>
        </div>

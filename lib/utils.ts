@@ -16,12 +16,12 @@ export const ConvertNumber = (number: number): string => {
  }).format(number);
 };
 
-export const parseISO = (date: string): string => {
- const formatted = new Date(date);
- return `${formatted.toLocaleString("en-us", {
+export const parseISO = (date: string): string =>
+ new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
   month: "long",
- })} ${formatted.getUTCDate()}, ${formatted.getFullYear()}`;
-};
+  day: "numeric",
+ });
 
 /* eslint-disable typescript/no-explicit-any */
 export function stripTypenames(value: any): any {
@@ -40,6 +40,6 @@ export function stripTypenames(value: any): any {
  }
 }
 
-export function cn(...inputs: ClassValue[]) {
+export const cn = (...inputs: ClassValue[]) => {
  return twMerge(clsx(inputs));
-}
+};

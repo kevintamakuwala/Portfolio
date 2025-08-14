@@ -9,18 +9,6 @@ interface ProvidersProps {
 }
 
 export function Providers({ children }: ProvidersProps) {
- useEffect(() => {
-  const updateDecorations = () => {
-   document.documentElement.style.setProperty("--hidden", localStorage.getItem("decorations") === "false" ? "none" : "block");
-  };
-
-  updateDecorations();
-  window.addEventListener("decorations", updateDecorations);
-
-  return () => {
-   window.removeEventListener("decorations", updateDecorations);
-  };
- }, []);
 
  return (
   <>

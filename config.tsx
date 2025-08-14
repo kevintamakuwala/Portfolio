@@ -51,7 +51,7 @@ export type Project = {
   name: string;
   started: string;
   ended?: string;
-  description: string;
+  description: string | string[];
   images: {
     src: string;
     alt: string;
@@ -148,7 +148,10 @@ export const projects = [
   },
   {
     name: 'Faculty of Technology - Backend',
-    description: `Developed a platform for HoD to monitor faculties, labs, and classrooms with role-based access control using Spring Security. Documented APIs with Swagger OpenAPI.`,
+    description: [
+      'Developed a platform for HoD to monitor faculties, labs, and classrooms with role-based access control using Spring Security.',
+      'Documented APIs with Swagger OpenAPI for better developer experience.',
+    ],
     images: [
       {
         src: '/assets/projects/fot/image-01.png',
@@ -181,7 +184,7 @@ export type Experience = {
   name: string;
   started: string;
   ended?: string;
-  description: string;
+  description: string | string[];
   logo: { src: string; alt: string; width: number; height: number };
   images?:
     | {
@@ -206,7 +209,14 @@ export const experiences = [
     started: '2025-04-11',
     logo: { src: '/assets/experience/pirimid/logo-01.png' },
 
-    description: ``,
+    description: [
+      'Strengthened authentication by implementing JWT token invalidation and refresh token flows in Spring Boot, preventing reuse of expired tokens and reducing unauthorized access attempts.',
+      'Engineered secure SMS provider integration in Spring Boot, achieving 99% message delivery rate while ensuring international compliance with telecom and data-protection regulations.',
+      'Optimized API performance with Redis, reducing database queries by 60% and improving response time by 200ms.',
+      'Reduced time-to-market by 50% by building a cross-platform mobile app from scratch using Flutter, delivering Android, iOS, and Web support from a single codebase.',
+      'Enhanced application security through Jailbreak/Root detection in Flutter, blocking compromised devices.',
+      'Enabled monetization by integrating in-app purchases for Android and iOS in Flutter, delivering seamless payment flow with less than 2% transaction failure rate.',
+    ],
 
     technologies: [
       {
@@ -243,7 +253,11 @@ export const experiences = [
     ended: '2025-04-10',
     logo: { src: '/assets/experience/pirimid/logo-01.png' },
 
-    description: `Improved the Early Warning System architecture, boosting flexibility by 50%. Built Spring Boot microservices with CQRS, event sourcing, and Resilience4j to reduce redundant API calls by 40%. Used Temporal.io for fault-tolerant workflows and integrated AWS ECS for scalable deployment.`,
+    description: [
+      'Designed Early Warning System for bank loans, improving disbursement accuracy and default analysis.',
+      'Upgraded Rule Engine with nested rules for flexible loan risk evaluation.',
+      'Built Spring Boot microservices with Spring Cloud API Gateway, Keycloak based authentication and rate limiting.',
+    ],
 
     technologies: [
       {
@@ -279,8 +293,11 @@ export const experiences = [
     ended: '2023-10-07',
     logo: { src: '/assets/experience/decrypters/logo-01.jpeg' },
 
-    description: `My role involved contributing to the programming community by conducting workshops and mentoring fellow programmers. 
-I have conducted a "Recursion and Backtracking" masterclass and mentored 50+ competitive programming enthusiasts. Additionally, I have set problems for coding contests along with arranging test cases.`,
+    description: [
+      'Contributed to the programming community by conducting workshops and mentoring fellow programmers.',
+      'Conducted a "Recursion and Backtracking" masterclass and mentored 50+ competitive programming enthusiasts.',
+      'Set problems for coding contests along with arranging test cases.',
+    ],
     technologies: [
       {
         name: 'C++',
@@ -297,7 +314,11 @@ I have conducted a "Recursion and Backtracking" masterclass and mentored 50+ com
     name: 'DSA Educator - Youtube',
     started: '2024-09-13',
     logo: { src: '/assets/experience/youtube/logo-01.svg' },
-    description: `On my YouTube channel, I teach Data Structures and Algorithms with simple explanations and easy-to-follow examples. I love sharing my knowledge and helping others understand tricky topics. My goal is to make ideas clear and accessible so viewers can learn and grow their coding skills confidently.`,
+    description: [
+      'Teach Data Structures and Algorithms with simple explanations and easy-to-follow examples.',
+      'Share knowledge and help others understand tricky topics in programming.',
+      'Make complex ideas clear and accessible so viewers can learn and grow their coding skills confidently.',
+    ],
     technologies: [
       {
         name: 'C++',
@@ -344,7 +365,7 @@ export type Achievement = {
   name: string;
   started: string;
   ended?: string;
-  description: string;
+  description: string | string[];
   images: {
     src: string;
     alt: string;
@@ -364,8 +385,11 @@ export const hackathonAchievements = [
     name: 'FarMart - DuHacks 2.0 (8th Rank)',
     started: '2023-02-18',
     ended: '2023-02-19/',
-    description:
-      'FarMart connects farmers with customers seeking fresh, chemical-free produce. We support sustainable farming by providing fair prices, workforce solutions, and a wide range of farm-fresh products, from fruits and vegetables to dairy and meats.',
+    description: [
+      'FarMart connects farmers with customers seeking fresh, chemical-free produce.',
+      'Support sustainable farming by providing fair prices and workforce solutions.',
+      'Offer a wide range of farm-fresh products, from fruits and vegetables to dairy and meats.',
+    ],
     technologies: [
       {
         name: 'PHP',
@@ -390,7 +414,11 @@ export const hackathonAchievements = [
     name: 'Anubhav बांटें - DuHacks3.0 Hackathon (11th rank)',
     started: '2024-02-23',
     ended: '2024-02-24',
-    description: `Built at Duhacks3.0 "Anubhav बांटें" provides a platform where students can learn from the experiences of alumni who have successfully navigated through placement interviews.`,
+    description: [
+      'Built at Duhacks3.0 "Anubhav बांटें" provides a platform where students can learn from the experiences of alumni.',
+      'Help students navigate through placement interviews successfully.',
+      'Connect current students with successful alumni for mentorship and guidance.',
+    ],
     technologies: [
       {
         name: 'Java',
@@ -421,8 +449,11 @@ export const hackathonAchievements = [
     name: 'Acehacks 3.0 - Participant',
     started: '2024-04-06',
     ended: '2024-04-07',
-    description:
-      'WisNet is a collaborative platform tackling societal challenges by harnessing the collective wisdom of admins and users. Admins post unsolved problems, while users contribute suggestions and engage in discussions.',
+    description: [
+      'WisNet is a collaborative platform tackling societal challenges by harnessing the collective wisdom of admins and users.',
+      'Admins post unsolved problems while users contribute suggestions and engage in discussions.',
+      'Foster community-driven problem-solving and knowledge sharing.',
+    ],
     technologies: [
       {
         name: 'Java',
@@ -446,8 +477,12 @@ export const CPAchievements = [
     name: 'Trakky Services - SDE Intern',
     started: '2023-05-01T16:59:08Z',
     ended: '2023-07-26',
-    description:
-      'Developed the entire user and admin frontend using ReactJs, CSS, Redux, and Material-UI.Rendered API calls from the backend server, making it dynamic. Maintained the highest quality of code and worked on various needs of the employer. Interacted with clients and solved numerous issues regarding user experience and interactivity.',
+    description: [
+      'Developed the entire user and admin frontend using ReactJs, CSS, Redux, and Material-UI.',
+      'Rendered API calls from the backend server, making it dynamic.',
+      'Maintained the highest quality of code and worked on various needs of the employer.',
+      'Interacted with clients and solved numerous issues regarding user experience and interactivity.',
+    ],
     technologies: [
       {
         name: 'React.js',
@@ -473,8 +508,11 @@ export const CPAchievements = [
     name: 'DSA Tutor & Problem Setter - Decrypters Competitive Programming Club',
     started: '2023-07-03',
     ended: '2023-10-07',
-    description: `My role involved contributing to the programming community by conducting workshops and mentoring fellow programmers. 
-I have conducted a "Recursion and Backtracking" masterclass and mentored 50+ competitive programming enthusiasts. Additionally, I have set problems for coding contests along with arranging test cases.`,
+    description: [
+      'Contributed to the programming community by conducting workshops and mentoring fellow programmers.',
+      'Conducted a "Recursion and Backtracking" masterclass and mentored 50+ competitive programming enthusiasts.',
+      'Set problems for coding contests along with arranging test cases.',
+    ],
     technologies: [
       {
         name: 'C++',
@@ -490,7 +528,11 @@ I have conducted a "Recursion and Backtracking" masterclass and mentored 50+ com
   {
     name: 'DSA Educator - Youtube',
     started: '2024-09-13',
-    description: `On my YouTube channel, I teach Data Structures and Algorithms with simple explanations and easy-to-follow examples. I love sharing my knowledge and helping others understand tricky topics. My goal is to make ideas clear and accessible so viewers can learn and grow their coding skills confidently.`,
+    description: [
+      'Teach Data Structures and Algorithms with simple explanations and easy-to-follow examples.',
+      'Share knowledge and help others understand tricky topics in programming.',
+      'Make complex ideas clear and accessible so viewers can learn and grow their coding skills confidently.',
+    ],
     technologies: [
       {
         name: 'C++',
