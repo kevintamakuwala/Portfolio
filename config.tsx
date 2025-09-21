@@ -175,7 +175,6 @@ export const projects = [
         icon: '/assets/tech/springboot.svg',
       },
     ],
-    website: 'https://anubhav-baatein.vercel.app/',
     github: 'https://github.com/kevintamakuwala/Duhacks3.0-AnubhavBaatein',
   },
 ] as Project[];
