@@ -1,8 +1,7 @@
 export const meta = {
   title: 'Kevin Tamakuwala',
-  description:
-    "I'm a Software Engineer based in India (IN), passionate about building scalable web applications and solving complex problems. I am Specialist @Codeforces, 4 ⭐ on @Codechef, Knight @Leetcode",
-  shortDescription: 'Software Engineer, Competitive Programmer and Youtuber',
+  description: 'Engineer, Traveller, Tinkerer.',
+  shortDescription: '',
   url: 'http://localhost:3000',
   accounts: {
     github: {
@@ -209,19 +208,10 @@ export const experiences = [
     logo: { src: '/assets/experience/pirimid/logo-01.png' },
 
     description: [
-      'Strengthened authentication by implementing JWT token invalidation and refresh token flows in Spring Boot, preventing reuse of expired tokens and reducing unauthorized access attempts.',
-      'Engineered secure SMS provider integration in Spring Boot, achieving 99% message delivery rate while ensuring international compliance with telecom and data-protection regulations.',
-      'Optimized API performance with Redis, reducing database queries by 60% and improving response time by 200ms.',
-      'Reduced time-to-market by 50% by building a cross-platform mobile app from scratch using Flutter, delivering Android, iOS, and Web support from a single codebase.',
-      'Enhanced application security through Jailbreak/Root detection in Flutter, blocking compromised devices.',
-      'Enabled monetization by integrating in-app purchases for Android and iOS in Flutter, delivering seamless payment flow with less than 2% transaction failure rate.',
+      'Building the Next-Generation Personal Finance Management Solution with Open Banking.',
     ],
 
     technologies: [
-      {
-        name: 'Flutter',
-        icon: '/assets/tech/flutter.svg',
-      },
       {
         name: 'Java',
         icon: '/assets/tech/java.svg',
@@ -234,7 +224,10 @@ export const experiences = [
         name: 'React.js',
         icon: '/assets/tech/react.svg',
       },
-
+      {
+        name: 'Flutter',
+        icon: '/assets/tech/flutter.svg',
+      },
       {
         name: 'AWS',
         icon: '/assets/tech/aws.svg',
@@ -244,7 +237,7 @@ export const experiences = [
         icon: '/assets/tech/posgresql.svg',
       },
     ],
-    website: 'https://www.pirimidtech.com',
+    website: 'https://pirimidtech.com/solutions/personal-finance-management/',
   },
   {
     name: 'SDE Intern - Pirimid Fintech',
@@ -253,9 +246,7 @@ export const experiences = [
     logo: { src: '/assets/experience/pirimid/logo-01.png' },
 
     description: [
-      'Designed Early Warning System for bank loans, improving disbursement accuracy and default analysis.',
-      'Upgraded Rule Engine with nested rules for flexible loan risk evaluation.',
-      'Built Spring Boot microservices with Spring Cloud API Gateway, Keycloak based authentication and rate limiting.',
+      'Developed an Early Warning System for bank loans, enhancing disbursement accuracy and reducing default risks.',
     ],
 
     technologies: [
@@ -284,7 +275,7 @@ export const experiences = [
         icon: '/assets/tech/posgresql.svg',
       },
     ],
-    website: 'https://www.pirimidtech.com',
+    website: 'https://pirimidtech.com/solutions/early-warning-system/',
   },
   {
     name: 'DSA Tutor & Problem Setter - Decrypters Competitive Programming Club',
