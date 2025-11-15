@@ -9,11 +9,14 @@ import { Icons } from '../components/Icons';
 import { ContactForm } from '@/components/client/ContactForm';
 import { Description, Header2 } from '@/components/Headers';
 import { ProjectCard } from '@/components/ProjectCard';
-import { projects } from '@/config';
+import { experiences, projects } from '@/config';
 import { header, contact, meta, technologies } from '@/config';
 import { GetUserData, getTotalContributionsForYears } from '@/lib/graphql';
 import { ConvertNumber } from '@/lib/utils';
 import { List } from 'lucide-react';
+import { ExperienceCard } from '@/components/ExperienceCard';
+import { getCompetitiveProgrammingAchievements } from '@/lib/getCompetitiveProgrammingAchievements';
+import Page from './competitive-programming/page';
 
 export const metadata = {
   title: header.title,
@@ -51,9 +54,9 @@ export default async function HomePage() {
         </p>
         <div className="mt-9 flex flex-row flex-wrap gap-4">
           <ButtonPrimary
-           href="/Kevin_Tamakuwala_Public_Resume.pdf"
-           download="Kevin_Tamakuwala_Public_Resume"
-           target="_blank"
+            href="/Kevin_Tamakuwala_Public_Resume.pdf"
+            download="Kevin_Tamakuwala_Public_Resume"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <Icons.Resume className="mr-2 size-5 fill-white stroke-2" />
@@ -123,36 +126,36 @@ export default async function HomePage() {
         />
       </section>
 
-      {/* About */}
-      <section className="mb-16 mt-6">
-        <Header2 id="about">About me</Header2>
+      {/*  Experience  */}
+      <section className="mt-8 mb-16">
+        <Header2 id="projects">Recent Experience</Header2>
+        <Description>
+          Discover some of my most recent professional experiences below.
+        </Description>
 
-        <div className="prose dark:prose-dark">
-          <span>
-            I ended up in coding because of my fascination with problem-solving
-            from a young age. I loved fixing broken toys and tackling math
-            puzzles, which sparked my curiosity. In 10th grade, I was introduced
-            to HTML and C language, and this experience deepened my interest in
-            programming. It made me realize that I could solve complex problems
-            through coding, leading me to pursue a career in software
-            engineering.
-          </span>
-        </div>
+        <ul className="mt-6 list-disc pl-5">
+          {' '}
+          {experiences.slice(0, 2).map((experience) => (
+            <li key={`experience-${experience.name}`}>
+              <ExperienceCard experience={experience} />
+            </li>
+          ))}
+        </ul>
 
-        <div className="mt-6 flex flex-row flex-wrap gap-4">
-          <ButtonPrimary
-            href={`https://github.com/${meta.accounts.github.username}`}
-            rel="noopener noreferrer"
-          >
-            <Icons.Github className="mr-2 size-5 fill-white stroke-2" />
-            View my Github
-          </ButtonPrimary>
-          {/* <ButtonSecondary href="/#contact">Contact me</ButtonSecondary> */}
-        </div>
+        <ButtonSecondary href="/experience">
+          View All Experiences
+        </ButtonSecondary>
       </section>
+      <hr className=" w-full  border border-neutral-200 dark:border-neutral-800" />
+
+      {/* Competitive Programming */}
+      <section className="mb-16">
+        <Page />
+      </section>
+      <hr className=" w-full  border border-neutral-200 dark:border-neutral-800" />
 
       {/* Projects */}
-      <section className="mb-6">
+      <section className="mt-8 mb-16">
         <Header2 id="projects">Recent Projects</Header2>
         <Description>
           Explore some of my recent projects below. For more, visit my GitHub
@@ -170,9 +173,10 @@ export default async function HomePage() {
 
         <ButtonSecondary href="/projects">View All Projects</ButtonSecondary>
       </section>
+      <hr className=" w-full  border border-neutral-200 dark:border-neutral-800" />
 
       {/* Technologies I use */}
-      <section className="my-6 mb-16">
+      <section className="mt-8 my-6 mb-16">
         <Header2 id="tech">Technologies I use</Header2>
         <Description>
           Over the years, I have worked with a variety of technologies. Here are
@@ -202,9 +206,9 @@ export default async function HomePage() {
           ...and many more!
         </p>
       </section>
-
+      <hr className=" w-full  border border-neutral-200 dark:border-neutral-800" />
       {/* Contact */}
-      <section className="mb-12">
+      <section className="mt-8 mb-12">
         <Header2 id="contact">Contact me</Header2>
         <Description>
           I'm always eager to explore new opportunities and take on exciting

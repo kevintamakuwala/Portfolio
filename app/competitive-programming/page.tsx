@@ -12,7 +12,7 @@ export const metadata = {
 export default async function Page() {
   const photos = await getCompetitiveProgrammingAchievements();
   return (
-    <div className="mb-16 mt-20 flex flex-col items-start justify-center">
+    <div className="mb-16 mt-8 flex flex-col items-start justify-center">
       <Header1>Competitive Programming</Header1>
       <Description>
         Let's walk through my journey of milestones in Competitive Programming.
